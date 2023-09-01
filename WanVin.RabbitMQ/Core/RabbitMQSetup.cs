@@ -10,13 +10,10 @@ namespace WanVin.RabbitMQ.Core
     public static class RabbitMQSetup
     {
         /// <summary>
-        /// 启动RabbitMQ
-        /// 生产：await _producersService.SendAsync(MessageQueueKey.XXX, "测试发送消息");
-        /// 消费：方法特性：[Subscribe(MessageQueueKey.XXX)]，方法入参：string msg，类继承：IConsumersSubscribe
+        /// 添加RabbitMQ订阅
         /// </summary>
-        /// <param name="services"></param>
-        /// <param name="configuration"></param>
-        /// <exception cref="ArgumentNullException"></exception>
+        /// <param name="services">程序服务</param>
+        /// <param name="rabbitMQConfig">配置文件类</param>
         public static void AddRabbitMQ(this IServiceCollection services, RabbitMQConfig rabbitMQConfig)
         {
             //有订阅类才执行订阅
