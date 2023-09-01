@@ -5,7 +5,7 @@ using WanVin.RabbitMQ.Interface;
 using WanVin.RabbitMQ.Service;
 using WanVin.RabbitMQ.Domain;
 
-namespace WanVin.RabbitMQ
+namespace WanVin.RabbitMQ.Core
 {
     public static class RabbitMQSetup
     {

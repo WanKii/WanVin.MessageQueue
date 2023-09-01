@@ -1,17 +1,12 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
 using System.Text;
-using System.Threading.Tasks;
 using WanVin.RabbitMQ.Domain;
 using WanVin.RabbitMQ.Interface;
 
-namespace WanVin.RabbitMQ
+namespace WanVin.RabbitMQ.Core
 {
     /// <summary>
     /// 订阅扩展

@@ -1,12 +1,7 @@
 ﻿using RabbitMQ.Client;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using WanVin.RabbitMQ.Domain;
 
-namespace WanVin.RabbitMQ
+namespace WanVin.RabbitMQ.Core
 {
     /// <summary>
     /// RabbitMQ扩展类

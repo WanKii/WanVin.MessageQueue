@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace WanVin.RabbitMQ.Interface
+﻿namespace WanVin.RabbitMQ.Interface
 {
     /// <summary>
     /// 生产者服务接口

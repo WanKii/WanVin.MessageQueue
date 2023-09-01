@@ -1,11 +1,7 @@
-﻿using Microsoft.Extensions.Logging;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using RabbitMQ.Client;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using WanVin.RabbitMQ.Core;
 using WanVin.RabbitMQ.Domain;
 using WanVin.RabbitMQ.Interface;
 
@@ -15,16 +11,13 @@ namespace WanVin.RabbitMQ.Service
     {
         private readonly IConnection _connection;//RabbitMQ连接对象
         private readonly RabbitMQConfig _rabbitMQConfig;//RabbitMQ配置文件
-        private readonly ILogger<BaseProducersService> _logger;//日志对象
 
         public BaseProducersService(
             IConnection connection,
-            RabbitMQConfig rabbitMQConfig,
-            ILogger<BaseProducersService> logger)
+            RabbitMQConfig rabbitMQConfig)
         {
             _connection = connection;
             _rabbitMQConfig = rabbitMQConfig;
-            _logger = logger;
         }
 
         /// <summary>
