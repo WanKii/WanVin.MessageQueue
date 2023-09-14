@@ -17,9 +17,9 @@ namespace WanVin.RabbitMQ.Core
         private IServiceProvider _serviceProvider;//程序服务提供器
         private RabbitMQConfig _rabbitMQConfig;//RabbitMQ配置文件
 
-        public SubscribeExtend(IServiceProvider serviceProvider, RabbitMQConfig rabbitMQConfig, IConnection connection)
+        public SubscribeExtend(IServiceProvider serviceProvider, RabbitMQConfig rabbitMQConfig, IRabbitMQConnection rabbitMQConnection)
         {
-            _connection = connection;
+            _connection = rabbitMQConnection.Connection;
             _serviceProvider = serviceProvider;
             _rabbitMQConfig = rabbitMQConfig;
         }

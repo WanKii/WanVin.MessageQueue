@@ -2,6 +2,7 @@
 using RabbitMQ.Client;
 using WanVin.RabbitMQ.Core;
 using WanVin.RabbitMQ.Domain;
+using WanVin.RabbitMQ.Interface;
 
 namespace WanVin.RabbitMQ
 {
@@ -12,13 +13,13 @@ namespace WanVin.RabbitMQ
     {
         private readonly IServiceProvider _serviceProvider;
         private readonly RabbitMQConfig _rabbitMQConfig;
-        private readonly IConnection _connection;
+        private readonly IRabbitMQConnection _rabbitMQConnection;
 
-        public HostedService(IServiceProvider serviceProvider, RabbitMQConfig rabbitMQConfig, IConnection connection)
+        public HostedService(IServiceProvider serviceProvider, RabbitMQConfig rabbitMQConfig, IRabbitMQConnection rabbitMQConnection)
         {
             _serviceProvider = serviceProvider;
             _rabbitMQConfig = rabbitMQConfig;
-            _connection = connection;
+            _rabbitMQConnection = rabbitMQConnection;
         }
 
         /// <summary>
@@ -28,7 +29,7 @@ namespace WanVin.RabbitMQ
         public async Task StartAsync(CancellationToken cancellationToken)
         {
             //启动订阅
-            await new SubscribeExtend(_serviceProvider, _rabbitMQConfig, _connection).Init();
+            await new SubscribeExtend(_serviceProvider, _rabbitMQConfig, _rabbitMQConnection).Init();
         }
 
         /// <summary>

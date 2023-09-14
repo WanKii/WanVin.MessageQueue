@@ -24,8 +24,12 @@ namespace WanVin.RabbitMQ.Core
 
                 if (connection != null)
                 {
+                    //填充RabbitMQ连接对象到单独的接口里
+                    IRabbitMQConnection rabbitMQConnection = new RabbitMQConnection(connection);
+
                     //单例注入rabbitmq连接对象
-                    services.AddSingleton(connection);
+                    services.AddSingleton(rabbitMQConnection);
+                    //services.AddSingleton(connection);
 
                     //注入RabbitMQ配置文件
                     services.AddSingleton(rabbitMQConfig);

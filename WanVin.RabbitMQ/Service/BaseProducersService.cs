@@ -13,10 +13,10 @@ namespace WanVin.RabbitMQ.Service
         private readonly RabbitMQConfig _rabbitMQConfig;//RabbitMQ配置文件
 
         public BaseProducersService(
-            IConnection connection,
+            IRabbitMQConnection rabbitMQConnection,
             RabbitMQConfig rabbitMQConfig)
         {
-            _connection = connection;
+            _connection = rabbitMQConnection.Connection;
             _rabbitMQConfig = rabbitMQConfig;
         }
 
